@@ -11,10 +11,21 @@ Dummy Plone Dexterity content type to show a problem with plone.formwidget.autoc
 Installation
 ------------
 
-1. `git clone git@github.com:davide-targa/italian.cities.git`
-2. `cd italian.cities`
-3. `./bootstrap.sh`
-4. `bin/instance fg`
+1. Clone::
+
+    git clone git@github.com:davide-targa/italian.cities.git
+
+2. cd into the project::
+
+    cd italian.cities
+
+3. Launch bootstrap script::
+
+    ./bootstrap.sh
+
+4. Start Plone instance::
+
+    bin/instance fg
 
 License
 -------
