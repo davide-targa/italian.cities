@@ -40,6 +40,11 @@
       name="italian.cities-hiddenprofiles"
       />
 
+  <utility
+      factory=".vocabularies.CitiesVocabulary"
+      name="italian.cities.list"
+      />
+
   <!-- -*- extra stuff goes here -*- -->
 
 </configure>

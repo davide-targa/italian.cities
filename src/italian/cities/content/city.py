@@ -14,12 +14,12 @@ class ICity(model.Schema):
     city = schema.Choice(
         title=u"City name",
         description=u"For example: Bologna, Roma, etc...",
-        source=ItalianCitiesSourceBinder(),
+        vocabulary="italian.cities.list"
     )
     directives.widget(
         'city',
         AjaxSelectFieldWidget,
-        source=ItalianCitiesSourceBinder()
+        vocabulary="italian.cities.list"
     )
 
 
