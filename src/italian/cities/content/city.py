@@ -2,7 +2,8 @@ from italian.cities.sources import ItalianCitiesSourceBinder
 from plone.autoform import directives
 from plone.dexterity.content import Item
 from plone.supermodel import model
-from plone.formwidget.autocomplete import AutocompleteFieldWidget
+from plone.app.z3cform.widget import AjaxSelectFieldWidget
+from zope.schema.vocabulary import SimpleVocabulary, SimpleTerm
 from zope.interface import implementer
 from zope import schema
 
@@ -10,12 +11,15 @@ from zope import schema
 class ICity(model.Schema):
     """ Marker interface and Dexterity Python Schema for City
     """
-    directives.widget(city=AutocompleteFieldWidget)
     city = schema.Choice(
         title=u"City name",
         description=u"For example: Bologna, Roma, etc...",
         source=ItalianCitiesSourceBinder(),
-        required=False,
+    )
+    directives.widget(
+        'city',
+        AjaxSelectFieldWidget,
+        source=ItalianCitiesSourceBinder()
     )
 
 
